@@ -10,7 +10,7 @@ const Education = () => {
       field: "Computer Science",
       year: "2025 - 2026",
       description:
-        "Focused on web development, data structures, and software engineering principles.",
+        "Gathered more knowledge on Computer Science and machine learning.",
       icon: "school",
     },
     {
