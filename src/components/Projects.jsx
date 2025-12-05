@@ -1,58 +1,10 @@
 import { useRef } from "react";
 import { motion } from "framer-motion";
-import ecotrackImg from "../assets/screenshots/ecoTrack.png";
-import gameHub from "../assets/screenshots/gameHub.png";
-import courseManage from "../assets/screenshots/courseManage.png";
+import { Link } from "react-router-dom";
+import { projects } from "../data/projects";
 
 const Projects = () => {
   const sectionRef = useRef(null);
-  const projects = [
-    {
-      title: "EcoTrack",
-      description:
-        "EcoTrack is a React frontend for tracking personal and community sustainability challenges. The app lets users discover challenges, join them, update progress, and view detailed activity history. It connects to the Echo Track API to read and modify user-challenge data.",
-      image: ecotrackImg,
-      alt: "EcoTrack",
-      liveLink: "https://ecotrack-dd506.web.app",
-    },
-    {
-      title: "Gamehub - A Game Library",
-      description:
-        "An engaging online library for discovering and supporting indie game developers.",
-      image: gameHub,
-      alt: "Gamehub - A Game Library",
-      liveLink: "https://your-task-app-link.com",
-    },
-    {
-      title: "Course Management Client",
-      description:
-        "A Next.js + React client for a course management site. Uses Firebase Authentication for user sign-in, Tailwind + DaisyUI for styling, and Axios for server API calls",
-      image: courseManage,
-      alt: "Course Management Client",
-      liveLink: "https://course-management-client-delta.vercel.app/",
-    },
-    // {
-    //   title: "Personal Blog Website",
-    //   description: "A content-focused blog platform with a custom CMS.",
-    //   image: blogImg,
-    //   alt: "Homepage of a personal blog website with articles.",
-    //   liveLink: "https://your-blog-link.com",
-    // },
-    // {
-    //   title: "Weather Forecast App",
-    //   description: "A clean interface to get real-time weather updates.",
-    //   image: weatherImg,
-    //   alt: "A clean mobile UI for a weather forecast application.",
-    //   liveLink: "https://your-weather-app-link.com",
-    // },
-    // {
-    //   title: "Recipe Finder Application",
-    //   description: "Discover recipes based on available ingredients.",
-    //   image: recipeImg,
-    //   alt: "An application for discovering recipes based on ingredients.",
-    //   liveLink: "https://your-recipe-app-link.com",
-    // },
-  ];
 
   return (
     <div
@@ -114,15 +66,12 @@ const Projects = () => {
                     <p className="text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal flex-grow">
                       {project.description}
                     </p>
-                    <motion.a
-                      href={project.liveLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.1, x: 5 }}
+                    <Link
+                      to={`/projects/${project.id}`}
                       className="inline-block mt-3 text-primary hover:text-primary/80 text-sm font-semibold transition-colors"
                     >
-                      View Project →
-                    </motion.a>
+                      View More / Details →
+                    </Link>
                   </div>
                 </motion.div>
               ))}
