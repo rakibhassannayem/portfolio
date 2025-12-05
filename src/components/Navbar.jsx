@@ -86,6 +86,13 @@ const Navbar = () => {
           <motion.a
             whileHover={{ scale: 1.1, color: "#fff" }}
             className="text-white/80 hover:text-white transition-colors text-sm font-medium leading-normal cursor-pointer"
+            href="#education"
+          >
+            Education
+          </motion.a>
+          <motion.a
+            whileHover={{ scale: 1.1, color: "#fff" }}
+            className="text-white/80 hover:text-white transition-colors text-sm font-medium leading-normal cursor-pointer"
             href="#contact"
           >
             Contact

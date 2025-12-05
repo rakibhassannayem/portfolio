@@ -34,6 +34,13 @@ const Footer = () => {
         <motion.a
           whileHover={{ scale: 1.1, color: "#8b5cf6" }}
           className="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm font-normal leading-normal min-w-24 cursor-pointer"
+          href="#education"
+        >
+          Education
+        </motion.a>
+        <motion.a
+          whileHover={{ scale: 1.1, color: "#8b5cf6" }}
+          className="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm font-normal leading-normal min-w-24 cursor-pointer"
           href="#contact"
         >
           Contact
