@@ -128,12 +128,12 @@ const Contact = () => {
                       Find me on
                     </p>
                     <div className="flex flex-wrap justify-start gap-4">
-                      {/* Social Links (GitHub, LinkedIn, Twitter) can be added here or reused */}
-                      {/* For brevity, I'll add one example or rely on Sidebars, but the design has them here too */}
                       <motion.a
                         whileHover={{ scale: 1.1, y: -5 }}
                         className="flex flex-col items-center justify-center gap-2 bg-transparent py-2.5 text-center w-20 h-20 border border-white/10 rounded-lg hover:bg-white/5 transition-colors"
                         href="https://github.com/rakibhassannayem"
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
                         <div className="rounded-full bg-white/10 p-2.5">
                           <div className="text-white">
@@ -153,6 +153,54 @@ const Contact = () => {
                         </div>
                         <p className="text-white text-sm font-medium leading-normal">
                           GitHub
+                        </p>
+                      </motion.a>
+
+                      <motion.a
+                        whileHover={{ scale: 1.1, y: -5 }}
+                        className="flex flex-col items-center justify-center gap-2 bg-transparent py-2.5 text-center w-20 h-20 border border-white/10 rounded-lg hover:bg-white/5 transition-colors"
+                        href="https://www.linkedin.com/in/rakibhassannayem"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <div className="rounded-full bg-white/10 p-2.5">
+                          <div className="text-white">
+                            <svg
+                              aria-hidden="true"
+                              className="w-5 h-5"
+                              fill="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" />
+                            </svg>
+                          </div>
+                        </div>
+                        <p className="text-white text-sm font-medium leading-normal">
+                          LinkedIn
+                        </p>
+                      </motion.a>
+
+                      <motion.a
+                        whileHover={{ scale: 1.1, y: -5 }}
+                        className="flex flex-col items-center justify-center gap-2 bg-transparent py-2.5 text-center w-20 h-20 border border-white/10 rounded-lg hover:bg-white/5 transition-colors"
+                        href="https://wa.me/8801988242787"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <div className="rounded-full bg-white/10 p-2.5">
+                          <div className="text-white">
+                            <svg
+                              aria-hidden="true"
+                              className="w-5 h-5"
+                              fill="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path d="M20.52 3.48C18.25 1.23 15.16 0 11.9 0 5.43 0 0.16 5.27 0.16 11.73c0 2.06.54 4.09 1.57 5.88L0 24l6.35-1.66c1.72.94 3.67 1.43 5.66 1.43 6.47 0 11.74-5.27 11.74-11.74 0-3.14-1.23-6.1-3.48-8.36zm-8.62 18.05c-1.77 0-3.5-.47-5.02-1.37l-.36-.21-3.73.98.99-3.64-.23-.37C2.79 15.95 2.32 13.87 2.32 11.73 2.32 6.88 6.29 3.01 11.14 3.01c2.59 0 5.03 1.01 6.86 2.84 1.83 1.83 2.84 4.26 2.84 6.86 0 4.85-3.96 8.78-8.8 8.78zm4.8-6.58c-.26-.13-1.56-.77-1.8-.86-.25-.08-.42-.13-.6.13-.17.27-.66.86-.81 1.04-.15.17-.31.2-.57.06-.26-.13-1.1-.41-2.11-1.3-.78-.7-1.31-1.56-1.46-1.82-.15-.27-.02-.41.11-.54.11-.11.26-.29.39-.44.13-.15.17-.26.26-.43.09-.17.04-.32-.02-.45-.06-.13-.6-1.44-.82-1.97-.21-.5-.43-.43-.6-.44-.16 0-.34-.01-.51-.01-.17 0-.45.07-.68.32-.23.26-.89.86-.89 2.1 0 1.24.91 2.43 1.04 2.6.13.17 1.86 2.84 4.51 3.99.63.27 1.12.43 1.5.55.63.2 1.2.17 1.65.1.5-.08 1.56-.64 1.78-1.25.22-.61.22-1.13.15-1.25-.06-.13-.24-.2-.5-.33z" />
+                            </svg>
+                          </div>
+                        </div>
+                        <p className="text-white text-sm font-medium leading-normal">
+                          WhatsApp
                         </p>
                       </motion.a>
                     </div>
