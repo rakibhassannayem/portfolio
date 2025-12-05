@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { gsap } from "gsap";
-import bgLessImg from "../assets/bgLess.png";
+import bgLessImg from "/bgLess.png";
 
 const Hero = () => {
   const imageRef = useRef(null);
