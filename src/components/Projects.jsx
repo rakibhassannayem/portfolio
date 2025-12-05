@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion } from "framer-motion";
-import ecotrackImg from "../assets/screenshots/ecotrack.png";
+import ecotrackImg from "../assets/screenshots/ecoTrack.png";
 import gameHub from "../assets/screenshots/gameHub.png";
 import courseManage from "../assets/screenshots/courseManage.png";
 
