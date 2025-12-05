@@ -1,0 +1,174 @@
+import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+const TECH_STACK = [
+  { icon: "code", name: "JavaScript" },
+  { icon: "developer_mode", name: "React" },
+  { icon: "hub", name: "Node.js" },
+  { icon: "css", name: "Tailwind CSS" },
+  { icon: "data_object", name: "Express JS" },
+  { icon: "database", name: "MongoDB" },
+  { icon: "http", name: "REST APIs" },
+  { icon: "terminal", name: "Git" },
+  { icon: "view_quilt", name: "Figma" },
+  { icon: "dns", name: "Vercel" },
+];
+
+const TechStackItem = ({ icon, name, index }) => (
+  <motion.div
+    initial={{ opacity: 0, scale: 0.8 }}
+    whileInView={{ opacity: 1, scale: 1 }}
+    viewport={{ once: false, amount: 0.3 }}
+    transition={{ duration: 0.4, delay: index * 0.05 }}
+    className="flex items-center gap-3 bg-primary/10 p-3 rounded-lg transition-colors"
+  >
+    <span className="material-symbols-outlined text-primary">{icon}</span>
+    <span className="text-white text-sm font-medium">{name}</span>
+  </motion.div>
+);
+
+const About = () => {
+  const sectionRef = useRef(null);
+  const titleRef = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from(titleRef.current, {
+        scrollTrigger: {
+          trigger: titleRef.current,
+          start: "top 80%",
+          end: "bottom 20%",
+        },
+        y: 50,
+        opacity: 0,
+        duration: 1,
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <section
+      ref={sectionRef}
+      className="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden"
+    >
+      <div className="px-4 md:px-10 lg:px-20 xl:px-40 flex flex-1 justify-center py-5">
+        <main className="pt-10 sm:pt-16">
+          {/* Introduction Section */}
+          <div className="text-center">
+            <motion.div
+              ref={titleRef}
+              className="flex min-w-72 flex-col gap-3 mb-6"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 0.6 }}
+            >
+              <p className="text-primary text-4xl sm:text-5xl font-black leading-tight tracking-[-0.033em]">
+                About Me
+              </p>
+              <p className="text-[#8892b0] text-lg font-normal leading-normal">
+                My journey and my tech stack.
+              </p>
+            </motion.div>
+            <motion.div
+              className="space-y-4 text-base font-normal leading-relaxed text-[#ccd6f6]/80"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <motion.p
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
+                Hello! I'm Nayem, a passionate web developer with a knack for
+                creating dynamic and user-friendly web applications. My journey
+                into the world of code started with a curiosity for how things
+                work on the internet, and it has since grown into a full-fledged
+                passions for building elegant and efficient solutions. I
+                specialize in front-end development but am also proficient with
+                back-end technologies, allowing me to bring ideas to life from
+                concept to deployment.
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                I thrive on solving complex problems and am dedicated to writing
+                clean, maintainable, and scalable code. My experience spans
+                across various modern technologies, which enables me to choose
+                the right tools for the job and deliver high-quality products.
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+              >
+                When I'm not coding, you can find me exploring new technologies,
+                contributing to open-source projects, or enjoying a good cup of
+                coffee. I believe in continuous learning and am always looking
+                for new challenges to tackle.
+              </motion.p>
+            </motion.div>
+          </div>
+
+          {/* Tech Stack Section */}
+          <div className="mt-12 sm:mt-20 px-4">
+            <motion.div
+              className="flex min-w-72 flex-col gap-2 mb-8"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.5 }}
+              transition={{ duration: 0.6 }}
+            >
+              <p className="text-white text-3xl font-bold leading-tight tracking-[-0.03em]">
+                My Tech Stack
+              </p>
+              <p className="text-[#8892b0] text-base font-normal leading-normal">
+                The tools and technologies I use to build things.
+              </p>
+            </motion.div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+              {TECH_STACK.map((tech, index) => (
+                <TechStackItem key={tech.name} {...tech} index={index} />
+              ))}
+            </div>
+          </div>
+
+          {/* Call to Action */}
+          <motion.div
+            className="text-center mt-16 sm:mt-24 px-4 pb-10"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.5 }}
+            transition={{ duration: 0.6 }}
+          >
+            <p className="text-lg text-[#ccd6f6]/90 mb-4">
+              Interested in working together?
+            </p>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-8 bg-primary hover:bg-primary/90 text-white text-base font-bold leading-normal tracking-[0.015em] transition-colors"
+            >
+              <span className="truncate">Get In Touch</span>
+            </motion.button>
+          </motion.div>
+        </main>
+      </div>
+      lt About;
+    </section>
+  );
+};
+export default About;
