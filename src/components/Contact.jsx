@@ -1,12 +1,12 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { useState } from "react";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
@@ -28,17 +28,17 @@ const Contact = () => {
     // Simulate form submission (replace with your actual API call)
     try {
       // Example: await fetch('/api/contact', { method: 'POST', body: JSON.stringify(formData) })
-      
+
       // Simulated delay
       await new Promise((resolve) => setTimeout(resolve, 1500));
-      
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      
+
+      setSubmitStatus("success");
+      setFormData({ name: "", email: "", subject: "", message: "" });
+
       // Reset success message after 5 seconds
       setTimeout(() => setSubmitStatus(null), 5000);
     } catch (error) {
-      setSubmitStatus('error');
+      setSubmitStatus("error");
       setTimeout(() => setSubmitStatus(null), 5000);
     } finally {
       setIsSubmitting(false);
@@ -46,13 +46,13 @@ const Contact = () => {
   };
 
   const handleCopyEmail = async () => {
-    const email = 'rakibhassannayem@gmail.com';
+    const email = "rakibhassannayem@gmail.com";
     try {
       await navigator.clipboard.writeText(email);
       setCopySuccess(true);
       setTimeout(() => setCopySuccess(false), 2000);
     } catch (err) {
-      console.error('Failed to copy email:', err);
+      console.error("Failed to copy email:", err);
     }
   };
 
@@ -89,11 +89,16 @@ const Contact = () => {
                   >
                     <motion.div
                       className="flex items-center gap-4 bg-transparent min-h-14 justify-between border border-white/10 rounded-lg px-4"
-                      whileHover={{ scale: 1.02, borderColor: 'rgba(255, 255, 255, 0.3)' }}
+                      whileHover={{
+                        scale: 1.02,
+                        borderColor: "rgba(255, 255, 255, 0.3)",
+                      }}
                     >
                       <div className="flex items-center gap-4">
                         <div className="text-white flex items-center justify-center rounded-lg bg-white/10 shrink-0 size-10">
-                          <span className="material-symbols-outlined">mail</span>
+                          <span className="material-symbols-outlined">
+                            mail
+                          </span>
                         </div>
                         <p className="text-white text-base font-normal leading-normal flex-1 truncate">
                           rakibhassannayem@gmail.com
@@ -107,7 +112,7 @@ const Contact = () => {
                           whileTap={{ scale: 0.95 }}
                           className="text-sm font-medium leading-normal text-primary hover:text-primary/90 transition-colors"
                         >
-                          {copySuccess ? 'Copied!' : 'Copy'}
+                          {copySuccess ? "Copied!" : "Copy"}
                         </motion.button>
                       </div>
                     </motion.div>
@@ -125,30 +130,30 @@ const Contact = () => {
                     <div className="flex flex-wrap justify-start gap-4">
                       {/* Social Links (GitHub, LinkedIn, Twitter) can be added here or reused */}
                       {/* For brevity, I'll add one example or rely on Sidebars, but the design has them here too */}
-                       <motion.a
+                      <motion.a
                         whileHover={{ scale: 1.1, y: -5 }}
                         className="flex flex-col items-center justify-center gap-2 bg-transparent py-2.5 text-center w-20 h-20 border border-white/10 rounded-lg hover:bg-white/5 transition-colors"
-                        href="#"
+                        href="https://github.com/rakibhassannayem"
                       >
-                         <div className="rounded-full bg-white/10 p-2.5">
-                            <div className="text-white">
-                                <svg
-                                    aria-hidden="true"
-                                    className="w-5 h-5"
-                                    fill="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        fillRule="evenodd"
-                                        clipRule="evenodd"
-                                        d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z"
-                                    ></path>
-                                </svg>
-                            </div>
-                         </div>
-                         <p className="text-white text-sm font-medium leading-normal">
-                             GitHub
-                         </p>
+                        <div className="rounded-full bg-white/10 p-2.5">
+                          <div className="text-white">
+                            <svg
+                              aria-hidden="true"
+                              className="w-5 h-5"
+                              fill="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                fillRule="evenodd"
+                                clipRule="evenodd"
+                                d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z"
+                              ></path>
+                            </svg>
+                          </div>
+                        </div>
+                        <p className="text-white text-sm font-medium leading-normal">
+                          GitHub
+                        </p>
                       </motion.a>
                     </div>
                   </motion.div>
@@ -216,20 +221,20 @@ const Contact = () => {
                         placeholder="Enter your message"
                       ></textarea>
                     </label>
-                    
+
                     {submitStatus && (
                       <motion.div
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
                         className={`text-sm font-medium text-center p-3 rounded-lg ${
-                          submitStatus === 'success'
-                            ? 'bg-green-500/20 text-green-400'
-                            : 'bg-red-500/20 text-red-400'
+                          submitStatus === "success"
+                            ? "bg-green-500/20 text-green-400"
+                            : "bg-red-500/20 text-red-400"
                         }`}
                       >
-                        {submitStatus === 'success'
-                          ? '✓ Message sent successfully!'
-                          : '✗ Failed to send message. Please try again.'}
+                        {submitStatus === "success"
+                          ? "✓ Message sent successfully!"
+                          : "✗ Failed to send message. Please try again."}
                       </motion.div>
                     )}
 
@@ -240,12 +245,12 @@ const Contact = () => {
                       whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
                       className={`flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-4 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] transition-colors ${
                         isSubmitting
-                          ? 'opacity-70 cursor-not-allowed'
-                          : 'hover:bg-primary/90'
+                          ? "opacity-70 cursor-not-allowed"
+                          : "hover:bg-primary/90"
                       }`}
                     >
                       <span className="truncate">
-                        {isSubmitting ? 'Sending...' : 'Send Message'}
+                        {isSubmitting ? "Sending..." : "Send Message"}
                       </span>
                     </motion.button>
                   </form>

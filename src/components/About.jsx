@@ -1,20 +1,16 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { motion } from "framer-motion";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const TECH_STACK = [
   { icon: "code", name: "JavaScript" },
   { icon: "developer_mode", name: "React" },
   { icon: "hub", name: "Node.js" },
-  { icon: "css", name: "Tailwind CSS" },
   { icon: "data_object", name: "Express JS" },
   { icon: "database", name: "MongoDB" },
+  { icon: "css", name: "Tailwind CSS" },
   { icon: "http", name: "REST APIs" },
   { icon: "terminal", name: "Git" },
-  { icon: "view_quilt", name: "Figma" },
+  { icon: "settings_backup_restore", name: "Firebase" },
   { icon: "dns", name: "Vercel" },
 ];
 
@@ -35,27 +31,17 @@ const About = () => {
   const sectionRef = useRef(null);
   const titleRef = useRef(null);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from(titleRef.current, {
-        scrollTrigger: {
-          trigger: titleRef.current,
-          start: "top 80%",
-          end: "bottom 20%",
-        },
-        y: 50,
-        opacity: 0,
-        duration: 1,
-      });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
+  const scrollToContact = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <section
       ref={sectionRef}
-      className="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden"
+      className="relative flex h-auto min-h-screen w-full flex-col group/design-root"
     >
       <div className="px-4 md:px-10 lg:px-20 xl:px-40 flex flex-1 justify-center py-5">
         <main className="pt-10 sm:pt-16">
@@ -158,6 +144,7 @@ const About = () => {
               Interested in working together?
             </p>
             <motion.button
+              onClick={scrollToContact}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-8 bg-primary hover:bg-primary/90 text-white text-base font-bold leading-normal tracking-[0.015em] transition-colors"
@@ -167,7 +154,6 @@ const About = () => {
           </motion.div>
         </main>
       </div>
-      lt About;
     </section>
   );
 };

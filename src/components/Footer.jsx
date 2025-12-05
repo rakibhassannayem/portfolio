@@ -1,9 +1,9 @@
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
     <motion.footer
-      className="flex flex-col gap-6 px-5 py-10 text-center mt-10 border-t border-solid border-black/10 dark:border-white/10"
+      className="flex flex-col gap-6 p-5 text-center border-t border-solid border-black/10 dark:border-white/10"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -11,28 +11,28 @@ const Footer = () => {
     >
       <div className="flex flex-wrap items-center justify-center gap-6">
         <motion.a
-          whileHover={{ scale: 1.1, color: '#8b5cf6' }}
+          whileHover={{ scale: 1.1, color: "#8b5cf6" }}
           className="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm font-normal leading-normal min-w-24 cursor-pointer"
           href="#home"
         >
           Home
         </motion.a>
         <motion.a
-          whileHover={{ scale: 1.1, color: '#8b5cf6' }}
+          whileHover={{ scale: 1.1, color: "#8b5cf6" }}
           className="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm font-normal leading-normal min-w-24 cursor-pointer"
           href="#about"
         >
           About
         </motion.a>
         <motion.a
-          whileHover={{ scale: 1.1, color: '#8b5cf6' }}
+          whileHover={{ scale: 1.1, color: "#8b5cf6" }}
           className="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm font-normal leading-normal min-w-24 cursor-pointer"
           href="#projects"
         >
           Projects
         </motion.a>
         <motion.a
-          whileHover={{ scale: 1.1, color: '#8b5cf6' }}
+          whileHover={{ scale: 1.1, color: "#8b5cf6" }}
           className="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm font-normal leading-normal min-w-24 cursor-pointer"
           href="#contact"
         >
@@ -99,7 +99,7 @@ const Footer = () => {
             width="24"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+            <path d="M18 2h-3a6 6 0 0 0-6 6v3H7v4h2v8h4v-8h3l1-4h-4V8a2 2 0 0 1 2-2h1z"></path>
           </svg>
         </motion.a>
       </div>

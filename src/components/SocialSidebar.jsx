@@ -30,7 +30,7 @@ const SocialSidebar = () => {
         variants={itemVariants}
         whileHover={{ scale: 1.2, y: -5 }}
         className="social-icon group"
-        href="#"
+        href="https://github.com/rakibhassannayem"
       >
         <svg
           className="h-6 w-6 transition-colors"
@@ -50,7 +50,7 @@ const SocialSidebar = () => {
          variants={itemVariants}
          whileHover={{ scale: 1.2, y: -5 }}
          className="social-icon group"
-         href="#"
+         href="https://www.linkedin.com/in/rakibhassannayem"
        >
           <svg className="h-6 w-6 transition-colors" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <title>LinkedIn</title>

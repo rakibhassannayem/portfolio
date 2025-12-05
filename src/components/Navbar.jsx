@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const navVariants = {
@@ -8,7 +8,7 @@ const Navbar = () => {
       opacity: 1,
       transition: {
         duration: 0.6,
-        ease: 'easeOut',
+        ease: "easeOut",
         staggerChildren: 0.1,
       },
     },
@@ -26,7 +26,10 @@ const Navbar = () => {
       initial="hidden"
       animate="visible"
     >
-      <motion.div className="flex items-center gap-4 text-white" variants={itemVariants}>
+      <motion.div
+        className="flex items-center gap-4 text-white"
+        variants={itemVariants}
+      >
         <motion.div
           className="size-4 text-primary"
           whileHover={{ rotate: 360 }}
@@ -54,44 +57,48 @@ const Navbar = () => {
           Nayem
         </h2>
       </motion.div>
-      <motion.div className="hidden md:flex flex-1 justify-end gap-8" variants={itemVariants}>
+      <motion.div
+        className="hidden md:flex flex-1 justify-end gap-8"
+        variants={itemVariants}
+      >
         <div className="flex items-center gap-9">
           <motion.a
-            whileHover={{ scale: 1.1, color: '#fff' }}
+            whileHover={{ scale: 1.1, color: "#fff" }}
             className="text-white/80 hover:text-white transition-colors text-sm font-medium leading-normal cursor-pointer"
             href="#home"
           >
             Home
           </motion.a>
           <motion.a
-            whileHover={{ scale: 1.1, color: '#fff' }}
+            whileHover={{ scale: 1.1, color: "#fff" }}
             className="text-white/80 hover:text-white transition-colors text-sm font-medium leading-normal cursor-pointer"
             href="#about"
           >
             About
           </motion.a>
           <motion.a
-            whileHover={{ scale: 1.1, color: '#fff' }}
+            whileHover={{ scale: 1.1, color: "#fff" }}
             className="text-white/80 hover:text-white transition-colors text-sm font-medium leading-normal cursor-pointer"
             href="#projects"
           >
             Projects
           </motion.a>
           <motion.a
-            whileHover={{ scale: 1.1 }}
-            className="text-white font-medium leading-normal cursor-pointer"
+            whileHover={{ scale: 1.1, color: "#fff" }}
+            className="text-white/80 hover:text-white transition-colors text-sm font-medium leading-normal cursor-pointer"
             href="#contact"
           >
             Contact
           </motion.a>
         </div>
-        <motion.button
+        <motion.a
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors"
+          href="https://drive.google.com/file/d/12niHA7PveiGNL0C8gjOqOkOHvtFp-F1Z/view?usp=drive_link"
         >
           <span className="truncate">Resume</span>
-        </motion.button>
+        </motion.a>
       </motion.div>
     </motion.header>
   );

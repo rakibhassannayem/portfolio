@@ -52,7 +52,7 @@ const Hero = () => {
             <span className="text-white">I'm</span>{' '}
             <span className="text-primary">Rakib Hassan Nayem</span>
           </motion.h1>
-          <motion.p variants={itemVariants} className="text-2xl md:text-3xl text-gray-400 mb-8">
+          <motion.p variants={itemVariants} className="text-2xl md:text-3xl text-gray-400 mb-8 mt-3">
             I am a Web Developer
           </motion.p>
           <motion.div
@@ -60,7 +60,7 @@ const Hero = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
           >
             <motion.a
-              href="#"
+              href="https://drive.google.com/file/d/12niHA7PveiGNL0C8gjOqOkOHvtFp-F1Z/view?usp=drive_link"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-primary text-white font-medium px-8 py-3 rounded-md hover:opacity-90 transition-opacity text-center"

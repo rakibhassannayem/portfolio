@@ -30,10 +30,17 @@ const Services = () => {
     },
   ];
 
+  const scrollToContact = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div
       ref={sectionRef}
-      className="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden"
+      className="relative flex min-h-screen w-full flex-col group/design-root"
     >
       <div className="layout-container flex h-full grow flex-col">
         <div className="px-4 md:px-10 lg:px-20 xl:px-40 flex flex-1 justify-center py-5">
@@ -51,7 +58,7 @@ const Services = () => {
                   <p className="text-white text-4xl sm:text-5xl font-black leading-tight tracking-[-0.033em]">
                     What I Do
                   </p>
-                  <p className="font-normal leading-normal max-w-xl">
+                  <p className="text-[#ccd6f6]/80 font-normal leading-normal max-w-xl">
                     I specialize in building custom web solutions that are fast,
                     responsive, and tailored to your needs. From sleek front-end
                     interfaces to robust back-end systems, I bring ideas to life
@@ -95,6 +102,7 @@ const Services = () => {
                 transition={{ duration: 0.6 }}
               >
                 <motion.button
+                  onClick={scrollToContact}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors"
