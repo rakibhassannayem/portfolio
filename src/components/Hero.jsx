@@ -37,6 +37,17 @@ const Hero = () => {
     },
   };
 
+  const handleResumeDownload = () => {
+    const link = document.createElement("a");
+    link.href =
+      "https://drive.google.com/uc?export=download&id=12niHA7PveiGNL0C8gjOqOkOHvtFp-F1Z";
+    link.download = "Rakib_Hassan_Nayem_Resume.pdf";
+    link.target = "_blank";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <main className="flex-grow flex items-center min-h-[calc(100vh-80px)]">
       <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
@@ -69,14 +80,21 @@ const Hero = () => {
             variants={itemVariants}
             className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
           >
-            <motion.a
-              href="https://drive.google.com/file/d/12niHA7PveiGNL0C8gjOqOkOHvtFp-F1Z/view?usp=drive_link"
+            <motion.button
+              onClick={handleResumeDownload}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-primary text-white font-medium px-8 py-3 rounded-md hover:opacity-90 transition-opacity text-center"
+              className="flex items-center justify-center gap-2 bg-primary text-white font-medium px-8 py-3 rounded-md hover:opacity-90 transition-opacity"
             >
-              Resume
-            </motion.a>
+              <span>Download Resume</span>
+              <motion.span
+                className="material-symbols-outlined text-lg"
+                initial={{ y: 0 }}
+                whileHover={{ y: 2 }}
+              >
+                download
+              </motion.span>
+            </motion.button>
             <motion.a
               href="#contact"
               whileHover={{ scale: 1.05 }}
