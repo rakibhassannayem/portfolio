@@ -1,6 +1,7 @@
-import { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
-import { gsap } from 'gsap';
+import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
+import { gsap } from "gsap";
+import bgLessImg from "../assets/bgLess.png";
 
 const Hero = () => {
   const imageRef = useRef(null);
@@ -12,7 +13,7 @@ const Hero = () => {
       duration: 2,
       repeat: -1,
       yoyo: true,
-      ease: 'power1.inOut',
+      ease: "power1.inOut",
     });
   }, []);
 
@@ -32,7 +33,7 @@ const Hero = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' },
+      transition: { duration: 0.6, ease: "easeOut" },
     },
   };
 
@@ -45,14 +46,23 @@ const Hero = () => {
           initial="hidden"
           animate="visible"
         >
-          <motion.p variants={itemVariants} className="text-lg text-gray-400 mb-2">
+          <motion.p
+            variants={itemVariants}
+            className="text-lg text-gray-400 mb-2"
+          >
             Hi There
           </motion.p>
-          <motion.h1 variants={itemVariants} className="text-5xl md:text-7xl font-bold mb-1">
-            <span className="text-white">I'm</span>{' '}
+          <motion.h1
+            variants={itemVariants}
+            className="text-5xl md:text-7xl font-bold mb-1"
+          >
+            <span className="text-white">I'm</span>{" "}
             <span className="text-primary">Rakib Hassan Nayem</span>
           </motion.h1>
-          <motion.p variants={itemVariants} className="text-2xl md:text-3xl text-gray-400 mb-8 mt-3">
+          <motion.p
+            variants={itemVariants}
+            className="text-2xl md:text-3xl text-gray-400 mb-8 mt-3"
+          >
             I am a Web Developer
           </motion.p>
           <motion.div
@@ -88,7 +98,7 @@ const Hero = () => {
             ref={imageRef}
             alt="Rakib Hassan Nayem"
             className="relative max-w-sm lg:max-w-md xl:max-w-lg"
-            src="/bgLess.png"
+            src={bgLessImg}
           />
         </motion.div>
       </div>
