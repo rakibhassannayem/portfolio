@@ -70,7 +70,7 @@ const Projects = () => {
                       to={`/projects/${project.id}`}
                       className="inline-block mt-3 text-primary hover:text-primary/80 text-sm font-semibold transition-colors"
                     >
-                      View More / Details →
+                      More Details →
                     </Link>
                   </div>
                 </motion.div>
