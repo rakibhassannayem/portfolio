@@ -102,7 +102,7 @@ const Navbar = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors"
-          href="https://drive.google.com/file/d/12niHA7PveiGNL0C8gjOqOkOHvtFp-F1Z/view?usp=drive_link"
+          href="https://drive.google.com/file/d/1O-D1myT2iUzY5RTycDxwTgg4dZehVYrM/view?usp=drive_link"
         >
           <span className="truncate">Resume</span>
         </motion.a>

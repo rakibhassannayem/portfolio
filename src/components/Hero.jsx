@@ -40,7 +40,7 @@ const Hero = () => {
   const handleResumeDownload = () => {
     const link = document.createElement("a");
     link.href =
-      "https://drive.google.com/uc?export=download&id=12niHA7PveiGNL0C8gjOqOkOHvtFp-F1Z";
+      "https://drive.google.com/uc?export=download&id=1O-D1myT2iUzY5RTycDxwTgg4dZehVYrM";
     link.download = "Rakib_Hassan_Nayem_Resume.pdf";
     link.target = "_blank";
     document.body.appendChild(link);
