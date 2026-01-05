@@ -62,7 +62,7 @@ const Contact = () => {
         <div className="px-4 sm:px-8 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
           <div className="layout-content-container flex flex-col max-w-[960px] flex-1">
             <main className="flex-1 px-4 py-12 sm:px-10">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <motion.div
                   className="flex flex-col gap-8"
                   initial={{ opacity: 0, x: -50 }}

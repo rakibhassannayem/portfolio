@@ -12,16 +12,16 @@ import SocialSidebar from "../components/SocialSidebar";
 import EmailSidebar from "../components/EmailSidebar";
 
 const Home = () => {
-  const { hash } = useLocation();
+  const location = useLocation();
 
   useEffect(() => {
-    if (hash) {
-      const element = document.getElementById(hash.replace("#", ""));
+    if (location.hash) {
+      const element = document.getElementById(location.hash.replace("#", ""));
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
       }
     }
-  }, [hash]);
+  }, [location]);
 
   return (
     <div className="font-display bg-background-dark text-gray-200">

@@ -1,56 +1,74 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+
+const MotionLink = motion.create(Link);
 
 const Footer = () => {
+  const handleScroll = (e, targetId) => {
+    if (window.location.pathname === "/" && targetId.startsWith("#")) {
+      const id = targetId.replace("#", "").replace("/", "");
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   return (
     <motion.footer
-      className="flex flex-col gap-6 p-5 text-center border-t border-solid border-black/10 dark:border-white/10"
+      className="flex flex-col gap-6 p-5 text-center border-t border-solid border-white/10"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
     >
       <div className="flex flex-wrap items-center justify-center gap-6">
-        <motion.a
+        <MotionLink
           whileHover={{ scale: 1.1, color: "#8b5cf6" }}
           className="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm font-normal leading-normal min-w-24 cursor-pointer"
-          href="#home"
+          to="/#home"
+          onClick={(e) => handleScroll(e, "#home")}
         >
           Home
-        </motion.a>
-        <motion.a
+        </MotionLink>
+        <MotionLink
           whileHover={{ scale: 1.1, color: "#8b5cf6" }}
           className="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm font-normal leading-normal min-w-24 cursor-pointer"
-          href="#about"
+          to="/#about"
+          onClick={(e) => handleScroll(e, "#about")}
         >
           About
-        </motion.a>
-        <motion.a
+        </MotionLink>
+        <MotionLink
           whileHover={{ scale: 1.1, color: "#8b5cf6" }}
           className="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm font-normal leading-normal min-w-24 cursor-pointer"
-          href="#projects"
+          to="/#projects"
+          onClick={(e) => handleScroll(e, "#projects")}
         >
           Projects
-        </motion.a>
-        <motion.a
+        </MotionLink>
+        <MotionLink
           whileHover={{ scale: 1.1, color: "#8b5cf6" }}
           className="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm font-normal leading-normal min-w-24 cursor-pointer"
-          href="#education"
+          to="/#education"
+          onClick={(e) => handleScroll(e, "#education")}
         >
           Education
-        </motion.a>
-        <motion.a
+        </MotionLink>
+        <MotionLink
           whileHover={{ scale: 1.1, color: "#8b5cf6" }}
           className="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm font-normal leading-normal min-w-24 cursor-pointer"
-          href="#contact"
+          to="/#contact"
+          onClick={(e) => handleScroll(e, "#contact")}
         >
           Contact
-        </motion.a>
+        </MotionLink>
       </div>
       <div className="flex flex-wrap justify-center gap-4">
         <motion.a
           whileHover={{ scale: 1.2, y: -5 }}
           className="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary"
-          href="#"
+          href="https://github.com/rakibhassannayem"
         >
           <svg
             className="feather feather-github"
@@ -70,7 +88,7 @@ const Footer = () => {
         <motion.a
           whileHover={{ scale: 1.2, y: -5 }}
           className="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary"
-          href="#"
+          href="https://www.linkedin.com/in/rakibhassannayem"
         >
           <svg
             className="feather feather-linkedin"
@@ -111,7 +129,7 @@ const Footer = () => {
         </motion.a>
       </div>
       <p className="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">
-        © 2025 Rakib Hassan Nayem. All Rights Reserved.
+        © 2025-{new Date().getFullYear()} Rakib Hassan Nayem. All Rights Reserved.
       </p>
     </motion.footer>
   );

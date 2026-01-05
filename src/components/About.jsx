@@ -75,14 +75,7 @@ const About = () => {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
-                Hello! I'm Nayem, a passionate web developer with a knack for
-                creating dynamic and user-friendly web applications. My journey
-                into the world of code started with a curiosity for how things
-                work on the internet, and it has since grown into a full-fledged
-                passions for building elegant and efficient solutions. I
-                specialize in front-end development but am also proficient with
-                back-end technologies, allowing me to bring ideas to life from
-                concept to deployment.
+                Having completed my graduation in Computer Science and Engineering (CSE), my journey started with the raw fundamentals. In my first year, I dived headfirst into the world of problem-solving. I spent countless hours on various online judges like Codeforces, UVA, and CodeChef, honing my logic using C and C++. However, like many early journeys, I eventually hit a wall of frustration and took a step back to re-evaluate my path.
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, x: 30 }}
@@ -90,10 +83,7 @@ const About = () => {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                I thrive on solving complex problems and am dedicated to writing
-                clean, maintainable, and scalable code. My experience spans
-                across various modern technologies, which enables me to choose
-                the right tools for the job and deliver high-quality products.
+                Everything changed when I joined the University for my Master’s (MSc) in CS. I decided to pivot and committed myself to a web development course at Programming Hero. I worked incredibly hard and remained consistent—navigating through every module, assignment, quiz, and project. This dedication led me to master the MERN Stack, and I haven't looked back since. I genuinely love working in this sector; there’s a unique satisfaction in building functional tools that people can actually use.
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, x: -30 }}
@@ -101,10 +91,7 @@ const About = () => {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
               >
-                When I'm not coding, you can find me exploring new technologies,
-                contributing to open-source projects, or enjoying a good cup of
-                coffee. I believe in continuous learning and am always looking
-                for new challenges to tackle.
+                Beyond the screen and the code, I am a very friendly person who values connection. I love traveling with my friends and exploring new places together—there's nothing quite like a good hangout to recharge my creative energy. I believe my friendliness and persistence define both my personal life and my professional work.
               </motion.p>
             </motion.div>
           </div>

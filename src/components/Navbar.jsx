@@ -1,6 +1,21 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+
+const MotionLink = motion.create(Link);
 
 const Navbar = () => {
+  const handleScroll = (e, targetId) => {
+    // If we're already on the home page and clicking a hash link
+    if (window.location.pathname === "/" && targetId.startsWith("#")) {
+      const id = targetId.replace("#", "").replace("/", "");
+      const element = document.getElementById(id);
+      if (element) {
+        // e.preventDefault(); // Don't prevent default, let the URL update but also force scroll
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   const navVariants = {
     hidden: { y: -100, opacity: 0 },
     visible: {
@@ -53,50 +68,57 @@ const Navbar = () => {
             </defs>
           </svg>
         </motion.div>
-        <h2 className="text-white text-lg font-bold leading-tight tracking-[-0.015em]">
-          Nayem
-        </h2>
+        <Link to="/#home" onClick={(e) => handleScroll(e, "#home")}>
+          <h2 className="text-white text-lg font-bold leading-tight tracking-[-0.015em] cursor-pointer">
+            Nayem
+          </h2>
+        </Link>
       </motion.div>
       <motion.div
         className="hidden md:flex flex-1 justify-end gap-8"
         variants={itemVariants}
       >
         <div className="flex items-center gap-9">
-          <motion.a
+          <MotionLink
             whileHover={{ scale: 1.1, color: "#fff" }}
             className="text-white/80 hover:text-white transition-colors text-sm font-medium leading-normal cursor-pointer"
-            href="#home"
+            to="/#home"
+            onClick={(e) => handleScroll(e, "#home")}
           >
             Home
-          </motion.a>
-          <motion.a
+          </MotionLink>
+          <MotionLink
             whileHover={{ scale: 1.1, color: "#fff" }}
             className="text-white/80 hover:text-white transition-colors text-sm font-medium leading-normal cursor-pointer"
-            href="#about"
+            to="/#about"
+            onClick={(e) => handleScroll(e, "#about")}
           >
             About
-          </motion.a>
-          <motion.a
+          </MotionLink>
+          <MotionLink
             whileHover={{ scale: 1.1, color: "#fff" }}
             className="text-white/80 hover:text-white transition-colors text-sm font-medium leading-normal cursor-pointer"
-            href="#projects"
+            to="/#projects"
+            onClick={(e) => handleScroll(e, "#projects")}
           >
             Projects
-          </motion.a>
-          <motion.a
+          </MotionLink>
+          <MotionLink
             whileHover={{ scale: 1.1, color: "#fff" }}
             className="text-white/80 hover:text-white transition-colors text-sm font-medium leading-normal cursor-pointer"
-            href="#education"
+            to="/#education"
+            onClick={(e) => handleScroll(e, "#education")}
           >
             Education
-          </motion.a>
-          <motion.a
+          </MotionLink>
+          <MotionLink
             whileHover={{ scale: 1.1, color: "#fff" }}
             className="text-white/80 hover:text-white transition-colors text-sm font-medium leading-normal cursor-pointer"
-            href="#contact"
+            to="/#contact"
+            onClick={(e) => handleScroll(e, "#contact")}
           >
             Contact
-          </motion.a>
+          </MotionLink>
         </div>
         <motion.a
           whileHover={{ scale: 1.05 }}
