@@ -1,17 +1,34 @@
 import { useRef } from "react";
 import { motion } from "framer-motion";
+import { RiNextjsLine, RiReactjsFill, RiNodejsFill, RiTailwindCssLine, RiGithubLine, RiFirebaseLine, RiGitBranchLine, RiVercelLine, RiHtml5Line } from "react-icons/ri";
+import { TbBrandJavascript, TbBrandCss3, TbBrandVite, TbBrandFramerMotion } from "react-icons/tb";
+import { SiExpress, SiMongodb } from "react-icons/si";
+import { MdHttp } from "react-icons/md";
 
 const TECH_STACK = [
-  { icon: "code", name: "JavaScript" },
-  { icon: "developer_mode", name: "React" },
-  { icon: "hub", name: "Node.js" },
-  { icon: "data_object", name: "Express JS" },
-  { icon: "database", name: "MongoDB" },
-  { icon: "css", name: "Tailwind CSS" },
-  { icon: "http", name: "REST APIs" },
-  { icon: "terminal", name: "Git" },
-  { icon: "settings_backup_restore", name: "Firebase" },
-  { icon: "dns", name: "Vercel" },
+  // Fundamentals
+  { icon: <RiHtml5Line />, name: "HTML5" },
+  { icon: <TbBrandCss3 />, name: "CSS3" },
+  { icon: <TbBrandJavascript />, name: "JavaScript" },
+
+  // Frontend
+  { icon: <RiReactjsFill />, name: "React" },
+  { icon: <RiNextjsLine />, name: "Next.js" },
+  { icon: <RiTailwindCssLine />, name: "Tailwind CSS" },
+  { icon: <TbBrandFramerMotion />, name: "Framer Motion" },
+
+  // Backend
+  { icon: <RiNodejsFill />, name: "Node.js" },
+  { icon: <SiExpress />, name: "Express JS" },
+  { icon: <SiMongodb />, name: "MongoDB" },
+  { icon: <MdHttp />, name: "REST APIs" },
+
+  // Tools & Others
+  { icon: <RiFirebaseLine />, name: "Firebase" },
+  { icon: <RiGitBranchLine />, name: "Git" },
+  { icon: <RiGithubLine />, name: "GitHub" },
+  { icon: <TbBrandVite />, name: "Vite" },
+  // { icon: <RiVercelLine />, name: "Vercel" },
 ];
 
 const TechStackItem = ({ icon, name, index }) => (
@@ -20,9 +37,11 @@ const TechStackItem = ({ icon, name, index }) => (
     whileInView={{ opacity: 1, scale: 1 }}
     viewport={{ once: false, amount: 0.3 }}
     transition={{ duration: 0.4, delay: index * 0.05 }}
-    className="flex items-center gap-3 bg-primary/10 p-3 rounded-lg transition-colors"
+    className="flex items-center gap-3 bg-primary/10 p-3 rounded-lg transition-colors hover:bg-primary/20"
   >
-    <span className="material-symbols-outlined text-primary">{icon}</span>
+    <div className="text-primary text-2xl flex items-center justify-center">
+      {icon}
+    </div>
     <span className="text-white text-sm font-medium">{name}</span>
   </motion.div>
 );
